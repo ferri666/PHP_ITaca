@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: sen-extrabold
+font link: http://www.philatype.com/#sen
+font author: Philatype
+font author site: http://www.philatype.com/
+Slogan Font: WorkSans-Light.ttf
+
+icon designer: Alfredo @ IconsAlfredo.com
+icon designer link: /AlfredoCreates
+        
+{"bg":"#390832","icon":"#D72C6B","font":"#D72C6B","slogan":"#eb407f"}
+      
