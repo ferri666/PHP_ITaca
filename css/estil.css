@@ -1,0 +1,33 @@
+ .navbar {
+		padding:7px;
+	 
+	}
+	
+	label {
+		margin:5px;
+	}
+	
+	input {
+		margin:5px;
+	}
+	
+	.btn-primary {
+		margin:8px;
+	}
+	
+	.carousel {
+		left:20%;
+		width: 700px;
+	}
+	
+	.carousel-control-prev {
+		margin:5px;
+	}
+	
+	.carousel-control-prev :hover {
+		border: 1px solid black;
+	}
+	
+	.carousel-control-next :hover {
+		border: 1px solid black;
+	}
