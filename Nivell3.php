@@ -12,46 +12,56 @@ echo "</p>";
 
 //////***Exercici 2***//////////////
 echo"<p><h2>Exercici 2</h2></p>";
+$total_xoc=0;
+$total_xic=0;
+$total_car=0;
 
-
-//Aquesta funció, donada una quantitat i un producte, ens afegirá al carrito virtual el total
-function afegir_al_carrito($quantitat, $producte){
+//Aquesta funció, donada una quantitat, ens afegirá al carrito virtual el total
+function afegir_xocolata($quantitat){
     
     //Cal declarar la variable com a global perque poguem operar amb ella fora de la funció
-    global $total_compra;
+    global $total_xoc;
     
-    switch ($producte) {
-        //Per cada producte, ens escriurá un missatge amb la quantitat que hem comprat i afegirá al total el que costa
-        case "xocolata":
-            echo "<p>Afegim ".$quantitat." xocolates.</p>";
-            //En cas de que es volgui fer amb preus cambiants, es podría afegir una variable amb el preu de cada producte
-            //i multiplicarla per la quantitat.
-            $total_compra+=$quantitat;
-            break;
-        case "xiclet":
-            echo "<p>Afegim ".$quantitat." xiclets.</p>";
-            $total_compra+=$quantitat*0.5;
-            break;
-        case "carmel":
-            echo "<p>Afegim ".$quantitat." carmels.</p>";
-            $total_compra+=$quantitat*1.5;
-            break;
-            //En cas de que no es posi bé el producte o ens oblidem, escriurá un missatge d'error
-        default:
-            echo "<p>Siusplau, especifica bé el producte</p>";  
+    echo "<p>Afegim ".$quantitat." xocolates.</p>";
+     //En cas de que es volgui fer amb preus cambiants, es podría afegir una variable amb el preu de cada producte
+     //i multiplicarla per la quantitat.
+     $total_xoc+=$quantitat;
+  }
+
+function afegir_xiclet($quantitat){
+
+    global $total_xic;
+    echo "<p>Afegim ".$quantitat." xiclets.</p>";
+    $total_xic+=$quantitat*0.5;
     }
+
+function afegir_carmel($quantitat){
+
+        global $total_car;
+        echo "<p>Afegim ".$quantitat." carmels.</p>";
+        $total_car+=$quantitat*1.5;
+            
+    }
+
+
+function total_compra() {
+    global $total_xoc;
+    global $total_xic;
+    global $total_car;
+    $total_compra=$total_xic+$total_xoc+$total_car;
+    return $total_compra;
 }
 
 //Missatge d'entrada (opcional)
 echo "<p>Benvingut a SweetWorld!</p>";
 
 //Aquí posem el que comprem
-afegir_al_carrito(4, "xocolata");
-afegir_al_carrito(2, "xiclet");
-afegir_al_carrito(5, "carmel");
+afegir_xocolata(4);
+afegir_xiclet(2);
+afegir_carmel(5);
 
 //Missatge amb el total
-echo "<p>El total de la seva compra es ".$total_compra."€</p>";
+echo "<p>El total de la seva compra es ".total_compra()."€</p>";
 
 ///////***Exercici 3***///////////////
 echo"<p><h2>Exercici 3</h2></p>";
