@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "102d1236-6ed8-4c41-a7fb-a992631b9158",
+		"name": "Airport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index Paises",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Pais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Pais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pais",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pais",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Departamentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia/departamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Departamento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia/departamentos/Marketing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos",
+						"Marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Departamentos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia/departamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Departamento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia/departamentos/Marketing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos",
+						"Marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Departamento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/airport/public/paises/Australia/departamentos/Marketing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos",
+						"Marketing"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
