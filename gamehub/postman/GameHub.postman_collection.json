@@ -6,149 +6,93 @@
 	},
 	"item": [
 		{
-			"name": "Request",
+			"name": "Gamehub",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
-			},
-			"response": [
-				{
-					"name": "Hub",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8012/gamehub/public/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8012",
-							"path": [
-								"gamehub",
-								"public",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 18 May 2021 14:10:27 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1j PHP/8.0.3"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.0.3"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Set-Cookie",
-							"value": "XSRF-TOKEN=eyJpdiI6InV3QTBYMkcrVUxWN0k4eXBYT0JCSFE9PSIsInZhbHVlIjoiMU1PNnVGMmlOSFZ4dXdZM3dVbzJJYW5VaGk5RkhlYUY1ZDdDWmd0UFc0enE2aGJsOFBidnJlbS9sOTZvMFZ0UGRDbTAzVGRBeUdPRjEzeGlXVkdxdmJJZ2dJRzBpWlM0NFI0bFdXQnNXVnZnOUVRVTJWTVBDdzVORkJVRUJqeUciLCJtYWMiOiI5NTMyMTk2M2I3NzVjMmRlMzNhZjFiM2RmYzhhZTJkNDY3ZWEzZGI5OGRkNWQ4YWFhMTIyNTJiZWZhODI5OTI5In0%3D; expires=Tue, 18-May-2021 16:10:28 GMT; Max-Age=7200; path=/; samesite=lax"
-						},
-						{
-							"key": "Set-Cookie",
-							"value": "laravel_session=eyJpdiI6ImtmMHJmVloxS1U1OXhnQVJBZStqS3c9PSIsInZhbHVlIjoiZ1lPdWZuNmIyajNlZURxQ3NtMEcra1Bvb0xzM1dmTFBqMXplL3BNTVlBU1pWVnBIcU1EYkkvVytVZVVGR2xEeXhydE90Nkp1amg2NHpuR09hbHNkTGlpK1UyYmhxck1LMHJUb1NyWnJleVNyUTc0MENubWJaSE9weTZlQnBWdEoiLCJtYWMiOiJkNmVlMGEwNTVkMmI5MjE2MDdjN2EzMGY1MTFmNmE2ZjA5MWNjOTg4ZDgzZTNmMGU4ZWM5MDQ3ZjI4MzIwNmJmIn0%3D; expires=Tue, 18-May-2021 16:10:28 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
-						},
-						{
-							"key": "Content-Length",
-							"value": "356"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5, max=100"
-						},
-						{
-							"key": "Connection",
-							"value": "Keep-Alive"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
-						}
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/gamehub/public/",
+					"protocol": "http",
+					"host": [
+						"localhost"
 					],
-					"cookie": [],
-					"body": "<html>\n    <head>\n        <meta charset=\"utf-8\"/>\n        <title>New Game</title>\n    </head>\n    <body>\n        <h1>Welcome to the Game Hub</h1>\n        <h2>Please select a game</h2>\n        <a href=\"isaac/\">\n            <img src=\"iconisaac.png\" width=\"267\" height=\"319\" title=\"Isaac\">\n        </a> //\n        <a href=\"bumbo/\">\n            <img src=\"iconbumbo.png\" title=\"Bumbo\" width=\"300\" height=\"300\">\n        </a>\n    </body>\n</html>"
-				},
-				{
-					"name": "Name",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8012/gamehub/public/isaac/Cain",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8012",
-							"path": [
-								"gamehub",
-								"public",
-								"isaac",
-								"Cain"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 18 May 2021 14:11:39 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "Apache/2.4.46 (Win64) OpenSSL/1.1.1j PHP/8.0.3"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/8.0.3"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Set-Cookie",
-							"value": "XSRF-TOKEN=eyJpdiI6InR3b2pHQmU0RVVwRlBUTmFNVktWd3c9PSIsInZhbHVlIjoiWWp6d0FpUGNmUWE3bU9SYUhMb2VtWUhmZ2xsUFZOSTlXUE1ZWmtHRlZjRE91SnJyMVdLWldEQ1hQOUxMTjBUbWNPc0pDc0FOUXBLcnZqcUQrajlnd0RmdStJWlMzenVKTWhCRE1jWjYySWc3UjNYQUltQWcxOVozbnVxa0NaZHAiLCJtYWMiOiIxZDA1NmQyMjgzMzUxOWFiMDhlZmJmNGMzY2U0ZTcyOTIxOWJjZTA1MzljZjE4NjNlYjliODZkMjY5MGRiYWJiIn0%3D; expires=Tue, 18-May-2021 16:11:39 GMT; Max-Age=7199; path=/; samesite=lax"
-						},
-						{
-							"key": "Set-Cookie",
-							"value": "laravel_session=eyJpdiI6Imh6a0lCRmZKOFkxSTZ4Tm5RbjcrVVE9PSIsInZhbHVlIjoiamFQYi9iaTVrNWtqa0JweXFSMUIzWThCb0hkSDVzU1NSZHdkUk04UWpkYXdRZXV6UG9vcXYreG4vSFlWaURWQi9Yc3FrcHRjVkRJTmlwTWxxdyt3YVJmR005ZGZqdUo0bXB3LzFCbVV5WFgyYm9Pa1BSS1RSaUJrZzEyclFUekkiLCJtYWMiOiIzZDRlZGZlNjc5YjgxN2I4NzY5NWY2OTNmYzQ4NTUwYmM3MzYzMmEwZTRmOTM5ODQ1OTdiZDY2YWUyNDVhNDc5In0%3D; expires=Tue, 18-May-2021 16:11:39 GMT; Max-Age=7199; path=/; httponly; samesite=lax"
-						},
-						{
-							"key": "Content-Length",
-							"value": "253"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5, max=100"
-						},
-						{
-							"key": "Connection",
-							"value": "Keep-Alive"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
-						}
-					],
-					"cookie": [],
-					"body": "<html>\n    <head>\n        <meta charset=\"utf-8\"/>\n        <title>Who Am I?</title>\n    </head>\n    <body>\n        <img src=\"https://pbs.twimg.com/media/Di6pwY1U0AEaeTB.png\" width=\"254px\" height=\"348px\">\n        <h1>You are Cain</h1>\n    </body>\n</html>"
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"gamehub",
+						"public",
+						""
+					]
 				}
-			]
+			},
+			"response": []
+		},
+		{
+			"name": "Isaac",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/gamehub/public/isaac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"gamehub",
+						"public",
+						"isaac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Who Am I?",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/gamehub/public/isaac/Lazarus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"gamehub",
+						"public",
+						"isaac",
+						"Lazarus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bumbo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/gamehub/public/bumbo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"gamehub",
+						"public",
+						"bumbo"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

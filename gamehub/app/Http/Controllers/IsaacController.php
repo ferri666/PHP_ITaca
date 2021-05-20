@@ -15,7 +15,4 @@ class IsaacController extends Controller
     {
         return view('isaac.whoami', ['name' => $name]);
     }
-
-
-
 }

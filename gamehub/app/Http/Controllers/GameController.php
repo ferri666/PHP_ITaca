@@ -10,7 +10,4 @@ class GameController extends Controller
     {
         return view('index');
     }
-
-
 }
-

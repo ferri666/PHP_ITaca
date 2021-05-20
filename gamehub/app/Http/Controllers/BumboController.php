@@ -10,6 +10,4 @@ class BumboController extends Controller
     {
         return view('bumbo');
     }
-
-
 }

@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\BumboController;
 use App\Http\Controllers\GameController;
-use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\IsaacController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
