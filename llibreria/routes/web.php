@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
+Route::get('login', [AuthController::class, 'login']);
+Route::post('logout', [AuthController::class, 'logout']);
+Route::get('catalog', [CatalogController::class, 'catalog']);
+Route::get('catalog/show/{id}', [CatalogController::class, 'show']);
+Route::get('catalog/create', [CatalogController::class, 'create']);
+Route::put('catalog/edit/{id}', [CatalogController::class, 'edit']);
