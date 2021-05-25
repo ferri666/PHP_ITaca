@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "e72cf197-c400-4094-bbc1-685ff39c2e60",
+		"name": "Airport Enviroments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index Paises",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Pais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Pais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pais",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pais",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Departamentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia/departamentos",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Departamento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia/departamentos/Marketing",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos",
+						"Marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Departamentos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia/departamentos",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Departamento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia/departamentos/Marketing",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos",
+						"Marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Departamento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{IP}}:{{port}}/PHP_ITaca/airport/public/paises/Australia/departamentos/Marketing",
+					"protocol": "http",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"PHP_ITaca",
+						"airport",
+						"public",
+						"paises",
+						"Australia",
+						"departamentos",
+						"Marketing"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
