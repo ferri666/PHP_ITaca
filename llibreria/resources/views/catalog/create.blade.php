@@ -6,24 +6,42 @@
 	<div class="col-1">
 	</div>
 	<div class="col-5">
-<form method="POST" action="request/createRequest.php">
+<form method="POST" action="{{route('create')}}">
+	@csrf
 		<div class="form-group">
-		  <label for="titol">Títol</label>
-		  <input type="text" class="form-control" id="titol" name="titol" value="Insereix Títol">
+		  <label for="titol"><b>Títol</b></label>
+		  <input type="text" class="form-control" id="titol" name="titol" placeholder="Insereix Títol">
+		  @error('titol')
+			<small class="text-danger">
+				*Títol requerit
+			</small>
+		@enderror
 		</div>
+		
 
 		<div class="form-group">
-		  <label for="autor">Autor</label>
-		  <input type="text" class="form-control" id="autor" name="autor" value="Insereix Autor">
+		  <label for="autor"><b>Autor</b></label>
+		  <input type="text" class="form-control" id="autor" name="autor" placeholder="Insereix Autor">
+		  @error('autor')
+		<small class="text-danger">
+			*Autor requerit
+		</small>
+	@enderror
 		</div>
-
+		
 		<div class="form-group">
-		  <label for="any">Any Publicacio</label>
+		  <label for="any"><b>Any Publicacio</b></label>
 		  <input type="number" class="form-control" id="any" name="any" value="2020">
-		</div>
+		  @error('any')
+		<small class="text-danger">
+			*Any requerit
+		</small>
+		@enderror
 
+		</div>
+		
 		<div class="form-group">
-			<label for="genere">Gènere</label>
+			<label for="genere"><b>Gènere</b></label>
 			<select type="number" class="form-control" id="genere" name="genere">
 				<option>Romántica</option>
       			<option>Terror</option>
@@ -33,7 +51,13 @@
      			<option>No-Ficció</option>
 				<option>Altres</option>
 			</select>
+			@error('genere')
+			<small class="text-danger">
+				*Gènere requerit
+			</small>
+			@enderror
 		  </div>
+		 
 
 		  <button type="submit" class="btn btn-primary">Insereix</button>
 	  </form>

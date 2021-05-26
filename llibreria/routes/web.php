@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class);
-Route::get('login', [AuthController::class, 'login']);
+Route::get('login', [AuthController::class, 'loginForm'])->name('loginForm');
 Route::post('logout', [AuthController::class, 'logout']);
 Route::get('catalog', [CatalogController::class, 'catalog']);
-Route::get('catalog/show/{id}', [CatalogController::class, 'show']);
-Route::get('catalog/create', [CatalogController::class, 'create']);
-Route::put('catalog/edit/{id}', [CatalogController::class, 'edit']);
+Route::get('catalog/show/{id}', [CatalogController::class, 'show'])->name('show');
+Route::get('catalog/create', [CatalogController::class, 'createForm'])->name('createForm');
+Route::get('catalog/edit/{id}', [CatalogController::class, 'editForm'])->name('editForm');
+Route::post('catalog/create', [CatalogController::class, 'create'])->name('create');
+Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('catalog/edit/{id}', [CatalogController::class, 'edit'])->name('edit');

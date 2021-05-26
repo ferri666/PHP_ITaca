@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "ecf218c6-d8e7-40b2-9b67-e71dec9f9676",
+		"name": "Llibreria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/llibreria/public/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"llibreria",
+						"public",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/llibreria/public/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"llibreria",
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cataleg",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/llibreria/public/catalog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"llibreria",
+						"public",
+						"catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/llibreria/public/catalog/show/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"llibreria",
+						"public",
+						"catalog",
+						"show",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8012/PHP_ITaca/llibreria/public/catalog/edit/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8012",
+					"path": [
+						"PHP_ITaca",
+						"llibreria",
+						"public",
+						"catalog",
+						"edit",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
