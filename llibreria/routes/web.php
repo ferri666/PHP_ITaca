@@ -26,3 +26,7 @@ Route::get('catalog/edit/{id}', [CatalogController::class, 'editForm'])->name('e
 Route::post('catalog/create', [CatalogController::class, 'create'])->name('create');
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('catalog/edit/{id}', [CatalogController::class, 'edit'])->name('edit');
+
+Route::get('error', function(){
+    return response("404 Not Fun", 404);
+});

@@ -6,7 +6,7 @@
 <div class="col-1">
 </div>
 <div class="col-5">
-<form method="POST" action="{{route('edit', ['id'=><?php echo $id?>])}} ">
+<form method="POST" action="{{route('edit', ['id'=>$id])}} ">
 	@csrf
 	<div class="form-group">
 	  <label for="titol">Títol</label>
