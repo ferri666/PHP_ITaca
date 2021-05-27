@@ -1,12 +1,12 @@
 @extends('layouts.template')
 
 @section('content')
-<h1>&nbsp Editar Llibre nº{{$id}}</h1>
+<h1>&nbsp Editar Llibre nº<?php echo$id?></h1>
 <div class="Row">
 <div class="col-1">
 </div>
 <div class="col-5">
-<form method="POST" action="{{route('edit', ['id'=><?php echo $id?>])}} ">
+<form method="POST" action="{{route('edit', ['id'=>$id]) }}">
 	@csrf
 	<div class="form-group">
 	  <label for="titol">Títol</label>

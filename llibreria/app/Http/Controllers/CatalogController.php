@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class CatalogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('data');
+    }
+
     public function catalog()
     {
         return view('catalog.index');
@@ -35,7 +41,7 @@ class CatalogController extends Controller
            'genere' => 'required'
        ]);
        
-        return view ('create');
+        return view ('catalog.create');
     }
 
     public function edit(Request $request, $id)
