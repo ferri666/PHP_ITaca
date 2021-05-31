@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function logout()
     {
         $cookiename= \Cookie::forget('name');
-        return response(view('auth.login'))->cookie($cookiename);
+        return response(view('home'))->cookie($cookiename);
     }
 
     public function login(Request $request)
@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         $name = $request->input('name');
 
-        $cookiename = cookie('name', $name, 400);
+        $cookiename = cookie('name', $name, 200);
 
         return response(view('auth.login'))->cookie($cookiename);
     }

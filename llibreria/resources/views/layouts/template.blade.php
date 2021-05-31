@@ -7,7 +7,7 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <?php
-        if (Request::hasCookie('name')) echo Request::cookie('name')."<button class=\"btn-danger\" ><a href=logout>Surt</a></button>";
+        if (Request::hasCookie('name')) echo Cookie::get('name')."<button class=\"btn-danger\" ><a href=logout>Surt</a></button>";
         else echo "<a href=login>Inici Sessió</a>
         <a href=register>Registrar Nou Usuari</a>
         <a href=fpsswd>Has oblidat la contrasenya?</a>";
