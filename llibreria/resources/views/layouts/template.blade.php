@@ -5,6 +5,14 @@
 	<title>La Llibreria Màgica</title>
 </head>
 <body>
+    <nav class="navbar navbar-light bg-light">
+        <?php
+        if (Request::hasCookie('name')) echo Request::cookie('name')."<button class=\"btn-danger\" ><a href=logout>Surt</a></button>";
+        else echo "<a href=login>Inici Sessió</a>
+        <a href=register>Registrar Nou Usuari</a>
+        <a href=fpsswd>Has oblidat la contrasenya?</a>";
+        ?>
+    </nav>
         @yield('content')
         <footer>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

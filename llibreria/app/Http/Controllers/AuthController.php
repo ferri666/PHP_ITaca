@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
 {
@@ -13,7 +14,8 @@ class AuthController extends Controller
 
     public function logout()
     {
-        return view('auth.login');
+        $cookiename= \Cookie::forget('name');
+        return response(view('auth.login'))->cookie($cookiename);
     }
 
     public function login(Request $request)
@@ -22,7 +24,45 @@ class AuthController extends Controller
             'name' => 'required',
             'passw' => 'required'
         ]);
-        return view('auth.login');
+
+        $name = $request->input('name');
+
+        $cookiename = cookie('name', $name, 400);
+
+        return response(view('auth.login'))->cookie($cookiename);
+    }
+
+    public function registerForm()
+    {
+        return view('auth.register');
+    }
+
+    public function register(Request $request)
+    {
+        $request -> validate([
+            'name' => 'required',
+            'passw' => 'required'
+        ]);
+
+        $name = $request->input('name');
+
+        $cookiename = cookie('name', $name, 400);
+
+        return response(view('auth.register'))->cookie($cookiename);
+    }
+
+    public function fpsswdForm()
+    {
+        return view('auth.fpsswd');
+    }
+
+    public function fpsswd(Request $request)
+    {
+        $request -> validate([
+            'email' => 'required',
+            'respuesta' => 'required'
+        ]);
+        return view('auth.fpsswd');
     }
 
 }
