@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');;
 Route::get('login', [AuthController::class, 'loginForm'])->name('loginForm');
 Route::get('register', [AuthController::class, 'registerForm'])->name('registerForm');
 Route::get('fpsswd', [AuthController::class, 'fpsswdForm'])->name('fpsswdForm');

@@ -28,6 +28,16 @@
 	  		@enderror
 		</div>
 
+		<div class="form-group">
+			<label for="email">Correu Electronic</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="correu@mail.com">
+			@error('email')
+			<small class="text-danger">
+				*Introduiu mail
+			</small>
+				@enderror
+		  </div>
+
 		  <button type="submit" class="btn btn-primary">Entrar</button>
 	  </form>
 	</div>

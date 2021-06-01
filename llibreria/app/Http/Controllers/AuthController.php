@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function logout()
     {
         $cookiename= \Cookie::forget('name');
-        return response(view('home'))->cookie($cookiename);
+        return response(redirect('/'))->cookie($cookiename);
     }
 
     public function login(Request $request)
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         $cookiename = cookie('name', $name, 200);
 
-        return response(view('auth.login'))->cookie($cookiename);
+        return response(redirect('/'))->cookie($cookiename);
     }
 
     public function registerForm()
@@ -41,14 +41,15 @@ class AuthController extends Controller
     {
         $request -> validate([
             'name' => 'required',
-            'passw' => 'required'
+            'passw' => 'required',
+            'email' => 'required'
         ]);
 
         $name = $request->input('name');
 
-        $cookiename = cookie('name', $name, 400);
+        $cookiename = cookie('name', $name, 200);
 
-        return response(view('auth.register'))->cookie($cookiename);
+        return response(redirect('/'))->cookie($cookiename);
     }
 
     public function fpsswdForm()
