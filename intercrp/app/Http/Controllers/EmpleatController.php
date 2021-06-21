@@ -34,21 +34,33 @@ class EmpleatController extends Controller
 
     public function show($id){
 
+        try{
         $empleat = Empleat::findOrFail($id);
+        } catch (\Exception $exception) {
+            return view ('errors.noempleat');
+        }
 
         return view('empleats.show', compact('empleat'));
     }
 
     public function edit($id){
 
-        $empleat = Empleat::findOrFail($id);
+        try{
+            $empleat = Empleat::findOrFail($id);
+            } catch (\Exception $exception) {
+                return view ('errors.noempleat');
+            }
 
         return view('empleats.edit', compact('empleat'));
     }
 
     public function update(Request $request, $id){
         
-        $empleat = Empleat::findOrFail($id);
+        try{
+            $empleat = Empleat::findOrFail($id);
+            } catch (\Exception $exception) {
+                return view ('errors.noempleat');
+            }
 
         $request->validate([
             'nom' => 'required',

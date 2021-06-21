@@ -2,19 +2,17 @@
 
 @section('content')
 
-<nav class="navbar navbar-dark bg-dark" >
-<ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('create')}}">Crear</a>
-      </li>
-      <li  class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between" >
+  @if(Request::hasCookie('name'))
+  <a class="nav-item nav-link" href="#"><?php echo Cookie::get('name')?></a>
+  <button class="nav-item btn-outline-danger" type="button" ><a href="{{route('logout')}}">Surt</a></button>
+  @endif
+        <a class="nav-item nav-link" href="{{route('create')}}">Crear</a>
       <form method="POST" class="nav-item form-inline" action="{{route('buscar')}}">
         <input class="form-control" id="busq" name="busq" type="search" placeholder="Buscar" aria-label="Buscar">
         <button class="btn btn-outline-primary" type="submit">Buscar</button>
         @csrf
       </form>
-    </li>
-    </ul>
 </nav>
 <table class="table">
     <thead>
