@@ -1,4 +1,3 @@
-
 @extends('layouts.template')
 @section('content')
 <div class="Row">
@@ -12,7 +11,7 @@
 		<input type="date" class="form-control" id="date_game" name="date_game">
 		@error('date_game')
 	  <small class="text-danger">
-		  *Date required
+		  *Please select a valid date
 	  </small>
 		  @enderror
 	</div>

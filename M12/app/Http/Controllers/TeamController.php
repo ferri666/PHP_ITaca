@@ -17,7 +17,6 @@ class TeamController extends Controller
     }
 
     public function create(){
-        dd(":)");
         return view('team.create');
     }
 

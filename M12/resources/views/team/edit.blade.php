@@ -1,6 +1,11 @@
 @extends('layouts.template')
 
+
 @section('content')
+
+<?php
+$razas = ['Dwarves', 'Elfs', 'Goblins', 'Humans', 'Orcs', 'Zombies']
+?>
 
 <h1>&nbsp Team Edit</h1>
 <div class="Row">
@@ -23,12 +28,13 @@
 		<div class="form-group">
 		  <label for="race"><b>Race</b></label>
 		  <select type="text" class="form-control" id="race" name="race">
-            <option value="Dwarves">Dwarves</option>
-            <option value="Elfs">Elfs</option>
-            <option value="Goblins">Goblins</option>
-            <option value="Humans">Humans</option>
-            <option value="Orcs">Orcs</option>
-            <option value="Zombies">Zombies</option>
+            @foreach ($razas as $raza)
+
+			<option value="{{$raza}}" @if ($raza==$team->race)
+				selected
+			@endif>{{$raza}}</option>
+
+			@endforeach
         </select>
 		  @error('race')
 		<small class="text-danger">

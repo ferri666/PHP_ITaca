@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img style="width:200px; height:208px" src="logo.png">
+                <img style="width:259px; height:194px" src="fotos/bb2.jpeg">
             </a>
         </x-slot>
 
