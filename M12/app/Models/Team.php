@@ -12,7 +12,7 @@ class Team extends Model
     protected $fillable = [
         'name',
         'race',
-        'manager',
+        'user_id'
     ];
     
 }

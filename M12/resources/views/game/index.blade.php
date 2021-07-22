@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<a class="btn btn-primary" href="{{route('gameCreate')}}">Create</a>
+<a class="btn btn-primary" href="{{route('gameCreate')}}">Create Game</a>
 <table class="table">
     <thead>
     <tr>
@@ -12,13 +12,13 @@
     </tr>
     </thead>
     <tbody>
-    @foreach ($games as $row)
+    @foreach ($games as $game)
     <tr>
-    <th>{{ $row->id }}</th>
-    <td><a href="{{route('gameShow', $row->id)}}">{{ $row->description }}</a></td>
-    <td>{{ $row->date_game }}</td>
-    <td>{{ $row->status }}</td>
-    <td>{{ $row->team1_points }}-{{ $row->team2_points }}</td>
+    <th>{{ $game->id }}</th>
+    <td><a href="{{route('gameShow', compact('game'))}}">{{ $game->description }}</a></td>
+    <td>{{ $game->date_game }}</td>
+    <td>{{ $game->status }}</td>
+    <td>{{ $game->team1_points }}-{{ $game->team2_points }}</td>
     @endforeach
     </tbody>
 </table>

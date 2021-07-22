@@ -16,16 +16,15 @@ class GameController extends Controller
         return view('game.index', compact('games'));
     }
 
-    public function create() {
+    public function create ($id="1") {
 
         $teams = Team::all();
 
-        return view('game.create', compact('teams'));
+        return view('game.create', compact('teams', 'id'));
     }
 
-    public function show($id) {
+    public function show(Game $game) {
 
-        $game = Game::findOrFail($id);
         $team1 = Team::findOrFail($game->team1_id);
         $team2 = Team::findOrFail($game->team2_id);
 
@@ -49,15 +48,15 @@ class GameController extends Controller
     }
 
     
-    public function edit($id){
+    public function edit(Game $game){
 
-        $game = Game::findOrFail($id);
+    
         $teams =Team::all();
 
         return view('game.edit', compact('game', 'teams'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, Game $game){
         
         $request->validate([
             'date_game' => 'required|date|after:tomorrow',
@@ -66,13 +65,14 @@ class GameController extends Controller
             'team2_id'=>'required|different:team1_id'
         ]);
 
-       Game::findOrFail($id)->update($request->all());
+       $game->update($request->all());
        
       return back()->with('status','Game Updated!');
     }
 
-    public function destroy($id){
-        Game::findOrFail($id)->delete();
+    public function destroy(Game $game){
+      
+        
 
         return redirect()->route('gameIndex')->with('status','Team Deleted');
     }

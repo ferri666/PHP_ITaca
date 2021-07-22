@@ -31,7 +31,7 @@
 		<label for="team1_id"><b>Against</b></label>
 		<select class="form-control" id="team1_id" name="team1_id">
 			@foreach ($teams as $opt)
-				<option value="{{$opt->id}}">{{$opt->name}}</option>
+				<option value="{{$opt->id}}" @if ($opt->id==$id) selected @endif>{{$opt->name}}</option>
 			@endforeach
 		</select>
 

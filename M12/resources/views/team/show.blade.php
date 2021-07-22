@@ -1,11 +1,13 @@
 @extends('layouts.template')
 @section('content')
 <div class="row col-9">
-<a class="btn btn-success col-3" href="{{route('teamEdit', $team->id)}}">Edit</a>
-
+@can('update', $team)
+<a class="btn btn-success col-3" href="{{route('teams.edit', compact('team'))}}">Edit</a>
+@endcan
+@can('delete', $team)
 <button  class="btn btn-danger col-3" data-toggle="modal" data-target="#Delete">Delete</button>
-
-<a class="btn btn-success col-3" href="{{route('gameCreate')}}">Match</a>
+@endcan
+<a class="btn btn-success col-3" href="{{route('gameCreate', $team->id)}}">Match</a>
 
 
 <div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="DeleteLabel" aria-hidden="true">
@@ -21,7 +23,7 @@
         ¡You are about to delete this Team! ¿Are you sure about this?
     </div>
     <div class="modal-footer">
-<form action="{{route('teamDestroy', $team->id )}}" method="POST">
+<form action="{{route('teams.destroy', compact('team') )}}" method="POST">
     <button class="btn btn-danger"type="submit">Yes</button> 
     @method('DELETE')
     @csrf
@@ -43,10 +45,6 @@
     <td>{{ $team->race }}</td>
 </tr>
 <tr>
-        <th scope="col">Team Manager:</th>
-    <td>{{ $team->manager }}</td>
-</tr>
-<tr>
         <th scope="col">Wins:</th>
     <td>{{ $team->wins }}</td>
 </tr>
@@ -55,8 +53,12 @@
     <td>{{ $team->losses }}</td>
 </tr>
 <tr>
+        <th scope="col">League Points:</th>
+        <td>{{ $team->points }}</td>
+    </tr>
+<tr>
         <th scope="col">Total Points:</th>
-        <td>0</td>
+        <td>{{ $team->total_points }}</td>
     </tr>
 </table>
 

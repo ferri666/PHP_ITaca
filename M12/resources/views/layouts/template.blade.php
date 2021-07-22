@@ -5,7 +5,7 @@
         <title>Blood Bowl Team Manager</title>
     </head>
     <body>
-        <a href="{{route('teamIndex')}}"><img src="/fotos/bb4.jpg"></a>
+        <a href="{{route('teams.index')}}"><img src="/fotos/bb4.jpg"></a>
         @if (session()->has('status'))
         <div class="alert alert-success">{{session('status')}}</div>
     @endif

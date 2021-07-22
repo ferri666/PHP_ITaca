@@ -36,17 +36,8 @@
           @enderror
             </div>
 		
-            <div class="form-group">
-		  <label for="manager"><b>Manager</b></label>
-		  <input type="text" class="form-control" id="manager" name="manager" placeholder="Team Manager">
-		  @error('manager')
-		<small class="text-danger">
-			*Manager required
-		</small>
-	        @enderror
-	</div>
+        
     <div class="form-group">
-	
 		 
 
 		  <button type="submit" class="btn btn-primary">Input</button>

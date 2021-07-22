@@ -1,27 +1,31 @@
 @extends('layouts.template')
 @section('content')
-<a class="btn btn-success col-3" href="{{route('team.create')}}">Create</a>
+<a class="btn btn-success col-3" href="{{route('teams.create')}}">Create Team</a>
 <table class="table">
     <thead>
     <tr>
     <th scope="col">#</th>
     <th scope="col">Team Name</th>
     <th scope="col">Race</th>
-    <th scope="col">Team Manager</th>
     <th scope="col">Wins</th>
     <th scope="col">Losses</th>
+    <th scope="col">Points</th>
     </tr>
     </thead>
     <tbody>
-    @foreach ($teams as $row)
+    
+    @foreach ($teams as $team)
+    @can ('view', $team)
     <tr>
-    <th>{{ $row->id }}</th>
-    <td><a href="{{route('teamShow', $row->id)}}">{{ $row->name }}</a></td>
-    <td>{{ $row->race }}</td>
-    <td>{{ $row->manager }}</td>
-    <td>{{ $row->wins }}</td>
-    <td>{{ $row->losses }}</td>
+    <th>{{ $team->id }}</th>
+    <td>@can('view', $team)<a href="{{route('teams.show', $team->id)}}">@endcan{{ $team->name }}</a></td>
+    <td>{{ $team->race }}</td>
+    <td>{{ $team->wins }}</td>
+    <td>{{ $team->losses }}</td>
+    <td>{{ $team->total_points }}</td>
+    @endcan
     @endforeach
+
     </tbody>
 </table>
 @endsection

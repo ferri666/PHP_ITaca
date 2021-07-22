@@ -4,11 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Team;
+use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
 
+    public function __construct() {
 
+        $this->authorizeResource(Team::class, 'team'); 
+
+    }
+    
+
+    
     public function index() {
 
         $teams = Team::all();
@@ -20,16 +28,12 @@ class TeamController extends Controller
         return view('team.create');
     }
 
-    public function show($id){
-
-        $team = Team::findOrFail($id);
+    public function show(Team $team){
 
         return view('team.show', compact('team'));
     }
 
-    public function edit($id){
-
-        $team = Team::findOrFail($id);
+    public function edit(Team $team){
 
     return view('team.edit', compact('team'));
     }
@@ -38,31 +42,38 @@ class TeamController extends Controller
 
         $request->validate ([
             'name'=>'required',
-            'manager'=>'required',
             'race'=>'required'
         ]);
 
+        $request['user_id']=Auth::user()->id;
 
         Team::create($request->all());
+
+
        
       return back()->with('status','New Team Added!');
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, Team $team){
         
         $request->validate([
             'name' => 'required',
-            'race' => 'required',
-            'manager'=>'required'
+            'race' => 'required'
         ]);
 
-       Team::findOrFail($id)->update($request->all());
+        
+
+       $team->update($request->all());
        
       return back()->with('status','Team Updated!');
     }
 
-    public function destroy($id){
-        Team::findOrFail($id)->delete();
+    public function destroy(Team $team) {
+     // if(auth()->user()->can('delete', $team)) {
+
+        $team->delete();
+
+      //}
 
         return redirect()->route('teamIndex')->with('status','Team Deleted');
     }

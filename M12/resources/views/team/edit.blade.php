@@ -42,16 +42,7 @@ $razas = ['Dwarves', 'Elfs', 'Goblins', 'Humans', 'Orcs', 'Zombies']
 		</small>
 	@enderror
 		</div>
-		
-        <div class="form-group">
-		  <label for="manager"><b>Team Manager</b></label>
-		  <input type="text" class="form-control" id="manager" name="manager" value="{{$team->manager}}">
-		  @error('manager')
-		<small class="text-danger">
-			*Manager required
-		</small>
-	@enderror
-	</div>
+	
 		 <button type="submit" class="btn btn-primary">Edit</button>
 		@method('PUT')
 	  </form>

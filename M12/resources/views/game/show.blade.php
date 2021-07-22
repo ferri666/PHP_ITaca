@@ -52,10 +52,14 @@
 <tr>
     <th scope="col">Team 1</th>
 <td>{{ $team1->name }}</td>
+<th> Score</th>
+<td>{{ $game->team1_points }}</td>
 </tr>
 <tr>
     <th scope="col">Team 2</th>
 <td>{{ $team2->name }}</td>
+<th> Score</th>
+<td>{{ $game->team2_points }}</td>
 </tr>
 
 </table>
