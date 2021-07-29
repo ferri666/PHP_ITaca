@@ -18,6 +18,7 @@ class Game extends Model
     ];
 
 
+
 //Metodo para actualizar las puntuaciones de los equipos de un juego 
 
 public function scores() {

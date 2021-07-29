@@ -7,7 +7,7 @@
 	<div class="col-1">
 	</div>
 	<div class="col-5">
-<form method="POST" action="{{route('teamStore')}}">
+<form method="POST" action="{{route('teams.store')}}">
 	@csrf
     <div class="form-group">
 		  <label for="name"><b>Name</b></label>

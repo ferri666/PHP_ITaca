@@ -7,7 +7,7 @@
 @can('delete', $team)
 <button  class="btn btn-danger col-3" data-toggle="modal" data-target="#Delete">Delete</button>
 @endcan
-<a class="btn btn-success col-3" href="{{route('gameCreate', $team->id)}}">Match</a>
+<a class="btn btn-success col-3" href="{{route('games.create', $team->id)}}">Match</a>
 
 
 <div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="DeleteLabel" aria-hidden="true">
@@ -23,12 +23,15 @@
         ¡You are about to delete this Team! ¿Are you sure about this?
     </div>
     <div class="modal-footer">
+    <div class="row">
 <form action="{{route('teams.destroy', compact('team') )}}" method="POST">
     <button class="btn btn-danger"type="submit">Yes</button> 
     @method('DELETE')
     @csrf
 </form>
-<button class="btn btn-secondary" data-dismiss="modal">No</button> 
+<button class="btn btn-secondary" data-dismiss="modal">No</button>
+</li>
+</div>
 </div>
 </div>
 </div>

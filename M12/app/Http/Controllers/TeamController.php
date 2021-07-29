@@ -75,7 +75,7 @@ class TeamController extends Controller
 
       //}
 
-        return redirect()->route('teamIndex')->with('status','Team Deleted');
+        return redirect()->route('teams.index')->with('status','Team Deleted');
     }
 
 }

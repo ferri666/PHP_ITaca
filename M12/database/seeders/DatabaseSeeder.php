@@ -128,6 +128,27 @@ class DatabaseSeeder extends Seeder
 
         Game::find(2)->scores();
 
+        $winners= Team::where('wins', 1)->get();  
+        $losers= Team::where('losses', 1)->get();         
         
+           Game::create([
+            'date_game'=> today(),
+            'description'=> 'Final',
+            'status'=>'Announced',
+            'team1_id'=> $winners[0]->id,
+            'team2_id'=> $winners[1]->id,
+            'team1_points'=> '0',
+            'team2_points'=> '0'
+        ]);
+
+        Game::create([
+            'date_game'=> today(),
+            'description'=> 'Amistoso',
+            'status'=>'Announced',
+            'team1_id'=> $losers[0]->id,
+            'team2_id'=> $losers[1]->id,
+            'team1_points'=> '0',
+            'team2_points'=>'0'
+        ]);
     }
 }

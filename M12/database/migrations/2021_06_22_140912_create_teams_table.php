@@ -21,8 +21,7 @@ class CreateTeamsTable extends Migration
             $table->smallInteger('losses')->default(0);
             $table->smallInteger('points')->default(0);
             $table->smallInteger('total_points')->default(0);
-            $table->foreignId('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

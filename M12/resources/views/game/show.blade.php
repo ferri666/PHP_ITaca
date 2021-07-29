@@ -1,8 +1,12 @@
 @extends('layouts.template')
 @section('content')
 <div class="row">
-<a class="btn btn-success col-3" href="{{route('gameEdit', $game->id)}}">Edit</a>
+@can('update', $team)
+<a class="btn btn-success col-3" href="{{route('games.edit', $game->id)}}">Edit</a>
+@endcan
+@can('delete', $team)
 <button  class="btn btn-danger col-3" data-toggle="modal" data-target="#Delete">Delete</button>
+@endcan
 </div>
 <div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="DeleteLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -17,13 +21,14 @@
         ¡You are about to delete this Game! ¿Are you sure about this?
     </div>
     <div class="modal-footer">
-<form action="{{route('gameDestroy', $game->id )}}" method="POST">
+    <div class="row">
+<form action="{{route('games.destroy', $game->id )}}" method="POST">
     <button class="btn btn-danger"type="submit">Yes</button> 
     @method('DELETE')
     @csrf
 </form>
 <button class="btn btn-secondary" data-dismiss="modal">No</button> 
-</div>
+</div></div>
 </div>
 </div>
 </div>

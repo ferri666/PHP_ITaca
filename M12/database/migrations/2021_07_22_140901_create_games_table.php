@@ -17,10 +17,8 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->date('date_game');
             $table->text('description')->default('No Description');
-            $table->unsignedBigInteger('team1_id');
-            $table->foreign('team1_id')->references('id')->on('teams')->onUpdate('cascade');
-            $table->unsignedBigInteger('team2_id');
-            $table->foreign('team2_id')->references('id')->on('teams')->onUpdate('cascade');
+            $table->foreignId('team1_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade'); //Equipo local
+            $table->foreignId('team2_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade'); //Equipo visitante
             $table->enum('status', ['Played', 'Announced', 'Cancelled'])->default('Announced');
             $table->smallInteger('team1_points')->default(0);
             $table->smallInteger('team2_points')->default(0);

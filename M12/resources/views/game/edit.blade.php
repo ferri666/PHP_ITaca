@@ -8,7 +8,7 @@
 	<div class="col-1">
 	</div>
 	<div class="col-5">
-<form method="POST" action="">
+<form method="POST" action="{{route('games.update', compact('game'))}}">
 	@csrf
 	<div class="form-group">
 		<label for="date_game"><b>Date of the Match</b></label>

@@ -18,13 +18,17 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/info', function () {
+    return view('info');
+})->name('info');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
-Route::group(['middleware'=>'auth'], function() {
+Route::group(['middleware'=>'auth', 'middleware'=>'user.role'], function() {
 
     Route::resource('teams', TeamController::class);
 
@@ -37,14 +41,16 @@ Route::group(['middleware'=>'auth'], function() {
     Route::put('teams/{team}/edit', [TeamController::class, 'update'])->name('teamUpdate');
     Route::delete('teams/{team}/destroy', [TeamController::class,'destroy'])->name('teamDestroy');*/
     
+    Route::resource('games', GameController::class);
 
-    Route::get('games', [GameController::class, 'index'])->name('gameIndex');
+    //Juegos
+    /*Route::get('games', [GameController::class, 'index'])->name('gameIndex');
     Route::get('games/{game}', [GameController::class, 'show'])->name('gameShow');
     Route::get('games/create/view/{id?}', [GameController::class, 'create'])->name('gameCreate');
     Route::post('games/create', [GameController::class, 'store'])->name('gameStore');
     Route::get('games/{game}/edit', [GameController::class, 'edit'])->name('gameEdit');
     Route::put('games/{game}/edit', [GameController::class, 'update'])->name('gameUpdate');
-    Route::delete('games/{game}/destroy', [GameController::class,'destroy'])->name('gameDestroy');
+    Route::delete('games/{game}/destroy', [GameController::class,'destroy'])->name('gameDestroy');*/
 
 });
 

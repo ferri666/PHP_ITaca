@@ -12,7 +12,7 @@ $razas = ['Dwarves', 'Elfs', 'Goblins', 'Humans', 'Orcs', 'Zombies']
 	<div class="col-1">
 	</div>
 	<div class="col-5">
-<form method="POST" action="{{route('teamUpdate', $team->id)}}">
+<form method="POST" action="{{route('teams.update', compact('team'))}}">
 	@csrf
 		<div class="form-group">
 		  <label for="Name"><b>Team Name</b></label>

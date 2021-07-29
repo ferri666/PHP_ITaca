@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Team;
+use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
+    public function __construct() {
+
+        $this->authorizeResource(Game::class, 'game'); 
+
+    }
+   
     public function index() {
 
         $games = Game::all();
@@ -74,7 +81,7 @@ class GameController extends Controller
       
         
 
-        return redirect()->route('gameIndex')->with('status','Team Deleted');
+        return redirect()->route('games.index')->with('status','Team Deleted');
     }
 
 

@@ -10,6 +10,17 @@ class GamePolicy
 {
     use HandlesAuthorization;
 
+
+    public function before(User $user, $ability) {
+
+
+        if ($user->hasRole('admin')) {
+            return true;
+        }
+
+
+    }
+
     /**
      * Determine whether the user can view any models.
      *
@@ -18,7 +29,7 @@ class GamePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +41,12 @@ class GamePolicy
      */
     public function view(User $user, Game $game)
     {
-        //
+        $user_teams=$user->teams;
+        
+        foreach ($user_teams as $user_team) {
+            if ($user_team->id==$game->team1_id || $user_team->id==$game->team2_id) return true;
+
+        }
     }
 
     /**
@@ -41,7 +57,7 @@ class GamePolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +69,12 @@ class GamePolicy
      */
     public function update(User $user, Game $game)
     {
-        //
+        $user_teams=$user->teams;
+        
+        foreach ($user_teams as $user_team) {
+            if ($user_team->id==$game->team1_id || $user_team->id==$game->team2_id) return true;
+
+        }
     }
 
     /**
@@ -65,7 +86,12 @@ class GamePolicy
      */
     public function delete(User $user, Game $game)
     {
-        //
+        $user_teams=$user->teams;
+        
+        foreach ($user_teams as $user_team) {
+            if ($user_team->id==$game->team1_id || $user_team->id==$game->team2_id) return true;
+
+        }
     }
 
     /**

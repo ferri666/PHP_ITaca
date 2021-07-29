@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('content')
-<a class="btn btn-success col-3" href="{{route('teams.create')}}">Create Team</a>
+
 <table class="table">
     <thead>
     <tr>
@@ -18,7 +18,7 @@
     @can ('view', $team)
     <tr>
     <th>{{ $team->id }}</th>
-    <td>@can('view', $team)<a href="{{route('teams.show', $team->id)}}">@endcan{{ $team->name }}</a></td>
+    <td>@can('update', $team)<a href="{{route('teams.show', compact('team'))}}">@endcan{{ $team->name }}</a></td>
     <td>{{ $team->race }}</td>
     <td>{{ $team->wins }}</td>
     <td>{{ $team->losses }}</td>
@@ -28,4 +28,7 @@
 
     </tbody>
 </table>
+<div class="row justify-content-end">
+<a class="btn btn-success col-1" href="{{route('teams.create')}}">New Team</a>
+</div>
 @endsection
