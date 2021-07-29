@@ -9,7 +9,7 @@
 <br />
 <div class="container">
 Blood Bowl es un juego de <del>tablero</del> <b>fútbol</b> (americano), lo cual lo hace totalmente válido para éste ejercicio.
-Aunque está poblado por razas fantásticas como humanos, enanos, goblins, elfos, orcos, etc.
+Inspirado en Warhammer, está poblado por diferentes razas fantásticas: elfos, enanos, orcos, trasgos, etc.
 </div>
 
 

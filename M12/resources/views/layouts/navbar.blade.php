@@ -3,7 +3,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     @auth
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ Auth::user()->name }}@if(Request::hasCookie('role')) - <?php echo Cookie::get('role') ?> @endif</a>
+                        {{ Auth::user()->name }}@if(Request::hasCookie('role')) - {{Cookie::get('role')}} @endif</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         <form method="POST" action="{{ route('logout') }}">
