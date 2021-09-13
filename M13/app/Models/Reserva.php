@@ -14,7 +14,8 @@ class Reserva extends Model
         'fecha_salida',
         'adultos',
         'menores',
-        'animales'
+        'animales',
+        'user_id'
     ];
 
     public function personas() {

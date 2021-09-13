@@ -19,8 +19,8 @@ class CreateReservasTable extends Migration
             $table->date('fecha_salida');
             $table->smallInteger('adultos');
             $table->smallInteger('menores');
-            $table->boolean('animales');
-            $table->foreignId('user_id');
+            $table->boolean('animales')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained('users')->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

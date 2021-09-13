@@ -19,7 +19,7 @@ Route::get('/', function () {
 
     Route::get('reservas', [ReservaController::class, 'index'])->name('reservas.index');
     Route::get('reservas/{reserva}', [ReservaController::class, 'show'])->name('reservas.show');
-    Route::get('reservas/create/',[ReservaController::class, 'create'])->name('reservas.create');
+    Route::get('reservas/create/view', [ReservaController::class, 'create'])->name('reservas.create');
     Route::post('reservas/create', [ReservaController::class, 'store'])->name('reservas.store');
     Route::get('reservas/{reserva}/edit', [ReservaController::class, 'edit'])->name('reservas.edit');
     Route::put('reservas/{reserva}/edit', [ReservaController::class, 'update'])->name('reservas.update');

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Reserva;
-use Illuminate\Http\Request;
+use App\Models\User;
+//use Illuminate\Http\Request;
+use App\Http\Requests\ValidarReserva;
 
 class ReservaController extends Controller
 {
@@ -25,7 +27,9 @@ class ReservaController extends Controller
 
     public function show(Reserva $reserva){
 
-        return view('reservas.show', compact('reserva'));
+        $usuarios = User::all();
+
+        return view('reservas.show', compact('reserva', 'usuarios'));
     }
 
     public function edit(Reserva $reserva){
@@ -33,8 +37,9 @@ class ReservaController extends Controller
     return view('reservas.edit', compact('reserva'));
     }
 
-    public function store(Request $request){
+    public function store(ValidarReserva $request){
 
+        $request['user_id']=User::find(1)->id;
         
         Reserva::create($request->all());
 
@@ -43,7 +48,7 @@ class ReservaController extends Controller
       return back()->with('status','Su Reserva Ha Sido Añadida');
     }
 
-    public function update(Request $request, Reserva $reserva){
+    public function update(ValidarReserva $request, Reserva $reserva){
         
 
        $reserva->update($request->all());
@@ -52,11 +57,7 @@ class ReservaController extends Controller
     }
 
     public function destroy(Reserva $reserva) {
-     // if(auth()->user()->can('delete', $reserva)) {
-
         $reserva->delete();
-
-      //}
 
         return redirect()->route('reservas.index')->with('status','reserva Deleted');
     }
