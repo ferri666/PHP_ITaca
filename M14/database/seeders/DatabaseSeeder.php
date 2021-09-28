@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Shop;
+use App\Models\Picture;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(10)->create();
 
         Shop::create([
             'name' =>'TodoCollares',
@@ -34,10 +35,29 @@ class DatabaseSeeder extends Seeder
             'capacity' => '30'
         ]);
 
-        Shop::create([
-            'name' =>'JSFHkJFGKJ',
-            'location' => 'PAHOF',
-            'capacity' => '69'
+        Picture::create([
+            'name' =>'Kromer',
+            'value' => '1997',
+            'date_arrival' => now(),
+            'shop_id' => Shop::find(1)->id,
+            'author' => 'Spamton'
         ]);
+
+        Picture::create([
+            'name' =>'Kromer',
+            'value' => '1997',
+            'date_arrival' => now(),
+            'shop_id' => Shop::find(2)->id,
+            'author' => 'Spamton'
+        ]);
+
+        Picture::create([
+            'name' =>'Kromer',
+            'value' => '1997',
+            'date_arrival' => now(),
+            'shop_id' => Shop::find(3)->id,
+            'author' => 'Spamton'
+        ]);
+
     }
 }

@@ -5,7 +5,6 @@ const MostrarCuadres =()=> import('./components/pictures/Mostrar.vue')
 const CrearCuadre =()=> import('./components/pictures/Crear.vue')
 
 
-
 export const routes = [
     {
     name: 'home',
@@ -24,12 +23,12 @@ export const routes = [
 },
 {
     name: 'mostrarCuadres',
-    path: '/shop/:id/pictures',
+    path: '/shops/:id/pictures',
     component:MostrarCuadres
 },
 {
     name: 'crearCuadre',
-    path: '/shop/:id/pictures',
+    path: '/shops/:id/pictures',
     component:CrearCuadre
 }
 ];

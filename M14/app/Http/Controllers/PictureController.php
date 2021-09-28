@@ -15,10 +15,13 @@ class PictureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Shop $shop)
+    public function index(int $id)
     {
 
-      $pictures= $shop->pictures();
+        $shop = Shop::find($id);
+        $pictures= $shop->pictures;
+
+        //$pictures = Picture::all();
 
       return response()->json($pictures);
     }
@@ -39,9 +42,13 @@ class PictureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, int $id)
     {
-        $picture = Shop::create($request->post());
+        $shop = Shop::find($id);
+        
+        $request['shop_id'] = $shop->id;
+        
+        $picture = Picture::create($request->post());
         
         return response()->json(compact('picture'));
     }
@@ -87,9 +94,15 @@ class PictureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Picture $picture)
+    public function destroy(int $id)
     {
-        $picture->delete();
+        $shop = Shop::find($id);
+        $pictures = $shop->pictures;
+        $pictures->map(function($item){
+            $item->delete();
+        });
+
+
         return response()->json([
             'mensaje' => 'AQUÍ NO HA PASADO NADA'
         ]);

@@ -18,7 +18,7 @@ class CreatePicturesTable extends Migration
             $table->string('name');
             $table->double('value');
             $table->binary('image')->nullable();
-            $table->timestamp('date_arrival');
+            $table->timestamp('date_arrival')->default(now());
             $table->foreignId('shop_id')->constrained('shops')->onUpdate('cascade')->onDelete('cascade');
             $table->string('author')->nullable();
         });

@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\PassportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PictureController;
 use App\Http\Controllers\ShopController;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('shop', ShopController::class)->only('store', 'index');
+Route::resource('shops', ShopController::class)->only('store', 'index');
 
-Route::resource('picture', PictureController::class)->only('store', 'index', 'destroy');
+Route::resource('shops.pictures', PictureController::class)->only('store', 'index');
+
+Route:: delete ('shops/{shop}/pictures', [PictureController::class, 'destroy'])->name('shop.pictures.destroy');
+
+Route:: post ('register', [PassportController::class, 'register'])->name('register');

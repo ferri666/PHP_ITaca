@@ -6,7 +6,7 @@
              <div class="card-header"><h4>Guardar Cuadro</h4></div>
          </div>
          <div class="card-body">
-             <form @submit.prevent="crear(shop)">
+             <form @submit.prevent="crear()">
                  <div class="row">
                      <div class="col-12 mb-2">
                          <div class="form-group">
@@ -41,6 +41,7 @@
  
   export default {
      name:"crear-picture",
+
     data(){
         return{
             picture:{
@@ -48,16 +49,19 @@
                 author:"",
                 value:"0.0"
             },
-            shop: []
+            shopID:this.$route.params.id
         }
     },
+    mounted(){
+
+    },
     methods: {
-      crear(shop){
-         this.axios.post('/api/shops/{this.shop.id}/pictures', this.picture)
-            , then(response=>{
-                this.$router.push({name:"mostrarCuadres"})
+     async crear(){
+        await this.axios.post('/api/shops/'+this.shopID+'/pictures', this.picture)
+            .then(response=>{
+                this.$router.push({name:"mostrarCuadres"},  this.shopID)
             })
-            .catch(error=>{consele.log(error)})
+            .catch(error=>{console.log(error)})
         }
     }
  }

@@ -8,8 +8,8 @@
 
         <div class="col-12">
             <div class="table-responsive">
-                <table class="bg-primary text-white">
-                    <thead>
+                <table class="table">
+                    <thead class="bg-primary text-white">
                         <tr>
                             <th>ID</th>
                             <th>Nom</th>
@@ -51,7 +51,7 @@ export default {
     },
     methods:{
        async mostrarShops(){
-           await this.axios.get('/api/shop')
+           await this.axios.get('/api/shops')
                 .then(response=>{
                     this.shops=response.data
                     })

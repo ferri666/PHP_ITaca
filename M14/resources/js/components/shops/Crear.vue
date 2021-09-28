@@ -51,12 +51,12 @@
         }
     },
     methods: {
-        crear(){
-          this.axios.post('/api/shop', this.shop)
-            , then(response=>{
+      async crear(){
+         await this.axios.post('/api/shops', this.shop)
+            .then(response=>{
                 this.$router.push({name:"mostrarShops"})
             })
-            .catch(error=>{consele.log(error)})
+            .catch(error=>{console.log(error)})
         }
     }
  }

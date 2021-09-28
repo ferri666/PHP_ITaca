@@ -2171,11 +2171,11 @@ var routes = [{
   component: CrearShop
 }, {
   name: 'mostrarCuadres',
-  path: '/shop/:id/pictures',
+  path: '/shops/:id/pictures',
   component: MostrarCuadres
 }, {
   name: 'crearCuadre',
-  path: '/shop/:id/pictures',
+  path: '/shops/:id/pictures',
   component: CrearCuadre
 }];
 

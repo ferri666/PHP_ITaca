@@ -69,12 +69,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "pictures",
   data: function data() {
     return {
       pictures: [],
-      shop: []
+      shopID: this.$route.params.id
     };
   },
   mounted: function mounted() {
@@ -90,10 +92,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.axios.get('/api/shop').then(function (response) {
-                  _this.shops = response.data;
+                return _this.axios.get('/api/shops/' + _this.shopID + '/pictures').then(function (response) {
+                  _this.pictures = response.data;
                 })["catch"](function (error) {
-                  _this.shops = [];
+                  _this.pictures = [];
                 });
 
               case 2:
@@ -103,6 +105,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    incendiar: function incendiar() {
+      var _this2 = this;
+
+      if (confirm("¿Confirma inciendiar las pruebas?")) this.axios["delete"]('/api/shops/' + this.shopID + '/pictures').then(function (response) {
+        _this2.mostrarPictures();
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });
@@ -961,122 +972,138 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("section", { staticClass: "jumbotron text-center" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("h1", { staticClass: "jumbotron-heading" }, [
-            _vm._v("Album example")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "lead text-muted" }, [
-            _vm._v(
-              "Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "p",
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { to: { name: "crearCuadre", params: { id: 1 } } }
-                },
-                [_vm._v("Crear")]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-danger",
-                  attrs: { to: { name: "EliminarShop" } }
-                },
-                [_vm._v("Incendiar")]
-              )
-            ],
-            1
+  return _c("div", { staticClass: "container" }, [
+    _c("section", { staticClass: "jumbotron text-center" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h1", { staticClass: "jumbotron-heading" }, [
+          _vm._v("Album example")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead text-muted" }, [
+          _vm._v(
+            "Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely."
           )
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.pictures, function(picture) {
-        return _c(
-          "div",
-          { key: picture.id, staticClass: "album py-5 bg-light" },
-          [_vm._m(0, true)]
+        ]),
+        _vm._v(" "),
+        _c(
+          "p",
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-success",
+                attrs: {
+                  to: { name: "crearCuadre", params: { id: _vm.shopID } }
+                }
+              },
+              [_vm._v("Crear")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-danger",
+                on: {
+                  click: function($event) {
+                    return _vm.incendiar()
+                  }
+                }
+              },
+              [_vm._v("Incendiar")]
+            )
+          ],
+          1
         )
-      })
-    ],
-    2
-  )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.pictures, function(picture) {
+          return _c(
+            "div",
+            { key: picture.id, staticClass: "album py-5 bg-light" },
+            [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("div", { staticClass: "card mb-4 box-shadow" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    staticStyle: {
+                      height: "225px",
+                      width: "100%",
+                      display: "block"
+                    },
+                    attrs: {
+                      "data-src":
+                        "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
+                      alt: "Thumbnail [100%x225]",
+                      src:
+                        "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17c035e64d5%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17c035e64d5%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.9453125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+                      "data-holder-rendered": "true"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("p", { staticClass: "card-text" }),
+                    _c("h1", [_vm._v(_vm._s(picture.name))]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v("By "),
+                      picture.author
+                        ? _c("small", [_vm._v(_vm._s(picture.author))])
+                        : _c("small", [_vm._v("Anonymous")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      },
+                      [
+                        _vm._m(0, true),
+                        _vm._v(" "),
+                        _c("small", { staticClass: "text-muted" }, [
+                          _vm._v(_vm._s(picture.value) + " €")
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ]
+          )
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "card mb-4 box-shadow" }, [
-            _c("img", {
-              staticClass: "card-img-top",
-              staticStyle: { height: "225px", width: "100%", display: "block" },
-              attrs: {
-                "data-src":
-                  "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                alt: "Thumbnail [100%x225]",
-                src:
-                  "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17c035e64d5%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17c035e64d5%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.9453125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                "data-holder-rendered": "true"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "d-flex justify-content-between align-items-center"
-                },
-                [
-                  _c("div", { staticClass: "btn-group" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-sm btn-outline-secondary",
-                        attrs: { type: "button" }
-                      },
-                      [_vm._v("View")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-sm btn-outline-secondary",
-                        attrs: { type: "button" }
-                      },
-                      [_vm._v("Edit")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("small", { staticClass: "text-muted" }, [_vm._v("9 mins")])
-                ]
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "btn-group" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-sm btn-outline-secondary",
+          attrs: { type: "button" }
+        },
+        [_vm._v("View")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-sm btn-outline-secondary",
+          attrs: { type: "button" }
+        },
+        [_vm._v("Edit")]
+      )
     ])
   }
 ]

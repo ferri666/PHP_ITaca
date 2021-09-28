@@ -15,13 +15,16 @@ class Picture extends Model
     protected $fillable = [
         'name',
         'value',
-        'author',
-        'shop_id'
+        'shop_id',
+        'author'
     ];
 
     protected $nullable = [
-        'image'
+        'image',
+        'author'
     ];
+
+    public $timestamps = false;
 
     public function shop()
     {
