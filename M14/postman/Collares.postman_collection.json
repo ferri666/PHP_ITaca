@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "d973dcbe-50b4-4e86-83d4-30abcfcde09e",
+		"name": "Collares",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Store Pictures",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "LOL",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Trollface",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "69.99",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/shops/3/pictures",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"shops",
+						"3",
+						"pictures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Pictures",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Index Shops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/shops/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"shops",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Shops",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Tienda Fiable",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "China",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "120",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/shops/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"shops",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pictures",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Tienda Fiable",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "China",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "120",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/shops/3/pictures",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"shops",
+						"3",
+						"pictures"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

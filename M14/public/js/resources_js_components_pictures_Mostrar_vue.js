@@ -1018,66 +1018,60 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        _vm._l(_vm.pictures, function(picture) {
-          return _c(
-            "div",
-            { key: picture.id, staticClass: "album py-5 bg-light" },
-            [
-              _c("div", { staticClass: "col-md-4" }, [
-                _c("div", { staticClass: "card mb-4 box-shadow" }, [
-                  _c("img", {
-                    staticClass: "card-img-top",
-                    staticStyle: {
-                      height: "225px",
-                      width: "100%",
-                      display: "block"
-                    },
-                    attrs: {
-                      "data-src":
-                        "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                      alt: "Thumbnail [100%x225]",
-                      src:
-                        "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17c035e64d5%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17c035e64d5%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.9453125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                      "data-holder-rendered": "true"
-                    }
-                  }),
+      _c("div", { staticClass: "album py-5 bg-light" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.pictures, function(picture) {
+            return _c("div", { key: picture.id, staticClass: "col-md-4" }, [
+              _c("div", { staticClass: "card mb-4 box-shadow" }, [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  staticStyle: {
+                    height: "225px",
+                    width: "100%",
+                    display: "block"
+                  },
+                  attrs: {
+                    "data-src": "https://thisartworkdoesnotexist.com/",
+                    alt: "RandomArt",
+                    src: "https://thisartworkdoesnotexist.com/",
+                    "data-holder-rendered": "true"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("p", { staticClass: "card-text" }),
+                  _c("h1", [_vm._v(_vm._s(picture.name))]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("p", { staticClass: "card-text" }),
-                    _c("h1", [_vm._v(_vm._s(picture.name))]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v("By "),
-                      picture.author
-                        ? _c("small", [_vm._v(_vm._s(picture.author))])
-                        : _c("small", [_vm._v("Anonymous")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "d-flex justify-content-between align-items-center"
-                      },
-                      [
-                        _vm._m(0, true),
-                        _vm._v(" "),
-                        _c("small", { staticClass: "text-muted" }, [
-                          _vm._v(_vm._s(picture.value) + " €")
-                        ])
-                      ]
-                    )
-                  ])
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("By "),
+                    picture.author
+                      ? _c("small", [_vm._v(_vm._s(picture.author))])
+                      : _c("small", [_vm._v("Anonymous")])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "d-flex justify-content-between align-items-center"
+                    },
+                    [
+                      _vm._m(0, true),
+                      _vm._v(" "),
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v(_vm._s(picture.value) + " €")
+                      ])
+                    ]
+                  )
                 ])
               ])
-            ]
-          )
-        }),
-        0
-      )
+            ])
+          }),
+          0
+        )
+      ])
     ])
   ])
 }
