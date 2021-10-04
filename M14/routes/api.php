@@ -16,14 +16,20 @@ use App\Http\Controllers\ShopController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('shops', ShopController::class)->only('store', 'index');
-
-Route::resource('shops.pictures', PictureController::class)->only('store', 'index');
-
-Route:: delete ('shops/{shop}/pictures', [PictureController::class, 'destroy'])->name('shop.pictures.destroy');
-
 Route:: post ('register', [PassportController::class, 'register'])->name('register');
+Route:: post ('login', [PassportController::class, 'login'])->name('login');
+
+Route::middleware('auth:api')->group(function() {
+    Route::resource('shops', ShopController::class)->only('store', 'index');
+    Route::resource('shops.pictures', PictureController::class)->only('store', 'index');
+    Route:: post ('logout', [PassportController::class, 'logout'])->name('logout');
+    Route::delete ('shops/{shop}/pictures', [PictureController::class, 'destroy'])->name('shop.pictures.destroy');
+}
+);
+
+
+

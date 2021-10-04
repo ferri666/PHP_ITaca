@@ -54,6 +54,9 @@ export default {
     },
     methods:{
        async mostrarPictures(){
+         axios.defaults.headers.common = {
+               Authorization: "Bearer " +localStorage.getItem("token")
+           };
            await this.axios.get('/api/shops/'+this.shopID+'/pictures')
                 .then(response=>{
                     this.pictures=response.data

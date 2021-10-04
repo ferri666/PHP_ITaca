@@ -57,6 +57,9 @@
     },
     methods: {
      async crear(){
+         axios.defaults.headers.common = {
+               Authorization: "Bearer " +localStorage.getItem("token")
+           };
         await this.axios.post('/api/shops/'+this.shopID+'/pictures', this.picture)
             .then(response=>{
                 this.$router.push({name:"mostrarCuadres"},  this.shopID)

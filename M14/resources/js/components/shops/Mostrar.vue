@@ -51,6 +51,9 @@ export default {
     },
     methods:{
        async mostrarShops(){
+           axios.defaults.headers.common = {
+               Authorization: "Bearer " +localStorage.getItem("token")
+           };
            await this.axios.get('/api/shops')
                 .then(response=>{
                     this.shops=response.data
