@@ -7,6 +7,7 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" v-model="data.password" id="inputPassword" class="form-control" placeholder="Password" required="">
       <p><button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button></p>
+      <small v-if="errado" class="text-danger">Nombre de usuario repetido</small>
     </form>
 </template>
 
@@ -21,10 +22,12 @@ export default{
             data:{
               email:"",
               password:""
-            }
+            },
+            errado: false
         }
     },
     mounted(){
+      this.errado=false
     },
     methods:{
        async login(){
@@ -34,9 +37,11 @@ export default{
                      localStorage.token = response.data.token
                       localStorage.removeItem('playername'),
                       localStorage.removeItem('playerid'),
-                     this.$router.push({name:"home"})
+                     this.$router.push({name:"home"}),
+                     this.errado=false
                     })
                     .catch(error=>{
+                        this.errado=true,
                         console.log(error)
                     })
         }

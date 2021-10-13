@@ -176,7 +176,7 @@ var render = function() {
           "Tu record en " +
             _vm._s(_vm.winner.winner.total_games) +
             " partidas es del " +
-            _vm._s(_vm.winner.awp) +
+            _vm._s(_vm.winner.awp.toFixed(2)) +
             " %!"
         )
       ]),

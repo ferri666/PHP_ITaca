@@ -136,8 +136,6 @@ class PlayerController extends Controller
             }
         }
 
-        // Ahora mismo el ordenarlo no sirve de mucho, porque la vista acaba dejandolo igual, pero no
-        // se como cambiarlo
         $ordenado = $scores->sortByDesc('awr');
         return response()->json($ordenado);
     }

@@ -7,7 +7,7 @@
     </router-link>
      <h1 class="text text-white">Juego de Dados</h1>
           <router-link  class="nav-link" :to='{name:"login"}'>Login User</router-link>
-          <router-link  class="nav-link" :to='{name:"crearPlayer"}'>Register Player</router-link>
+          <router-link  class="nav-link" v-if="isAuthenticated" :to='{name:"crearPlayer"}'>Register Player</router-link>
           <a class="nav-link" href="#" v-if="isAuthenticated" v-on:click="logout">Sign out</a>
       </div>
     </nav>
@@ -78,7 +78,9 @@ export default {
          localStorage.removeItem('token'),
          localStorage.removeItem('username'),
           localStorage.removeItem('playername'),
-          localStorage.removeItem('playerid'),
+          localStorage.removeItem('playerID'),
+          this.isAuthenticated=false,
+          this.isPlayer= false,
          this.$router.push({name:"home"})
        ]);
     }

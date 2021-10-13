@@ -176,7 +176,7 @@ var render = function() {
           "Tu record en " +
             _vm._s(_vm.loser.loser.total_games) +
             " partidas es de " +
-            _vm._s(_vm.loser.awl) +
+            _vm._s(_vm.loser.awl.toFixed(2)) +
             " %..."
         )
       ]),
@@ -193,7 +193,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container" }, [
       _c("img", {
         staticStyle: { "margin-left": "6%" },
-        attrs: { src: "/img/loser.gif", width: "40%" }
+        attrs: { src: "/img/loser2.gif", width: "40%" }
       })
     ])
   }

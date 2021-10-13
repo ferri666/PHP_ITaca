@@ -2166,7 +2166,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 };
                 _context.next = 3;
                 return _this.axios.post('/api/logout').then(function () {
-                  return [localStorage.removeItem('token'), localStorage.removeItem('username'), localStorage.removeItem('playername'), localStorage.removeItem('playerid'), _this.$router.push({
+                  return [localStorage.removeItem('token'), localStorage.removeItem('username'), localStorage.removeItem('playername'), localStorage.removeItem('playerID'), _this.isAuthenticated = false, _this.isPlayer = false, _this.$router.push({
                     name: "home"
                   })];
                 });
@@ -20704,11 +20704,16 @@ var render = function() {
             [_vm._v("Login User")]
           ),
           _vm._v(" "),
-          _c(
-            "router-link",
-            { staticClass: "nav-link", attrs: { to: { name: "crearPlayer" } } },
-            [_vm._v("Register Player")]
-          ),
+          _vm.isAuthenticated
+            ? _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "crearPlayer" } }
+                },
+                [_vm._v("Register Player")]
+              )
+            : _vm._e(),
           _vm._v(" "),
           _vm.isAuthenticated
             ? _c(

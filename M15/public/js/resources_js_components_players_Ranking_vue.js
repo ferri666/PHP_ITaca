@@ -71,7 +71,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 };
                 _context.next = 3;
                 return _this.axios.get('/api/players/ranking/show').then(function (response) {
-                  _this.scores = response.data; //this.scores = this.scores.sort((a, b)=>b.awr - a.awr)
+                  _this.scores = response.data; //this.scores = Array.from(this.scores)
+                  //this.scores = this.scores.sort((a, b)=>b.awr - a.awr)
                 })["catch"](function (error) {
                   _this.scores = [];
                   console.log(error);
@@ -211,7 +212,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", [_vm._v("AWP")])
+        _c("th", [_vm._v("AWR")])
       ])
     ])
   }

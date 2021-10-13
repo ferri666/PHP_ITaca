@@ -31,6 +31,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "login",
   data: function data() {
@@ -38,10 +39,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       data: {
         email: "",
         password: ""
-      }
+      },
+      errado: false
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.errado = false;
+  },
   methods: {
     login: function login() {
       var _this = this;
@@ -57,9 +61,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   localStorage.token = response.data.token;
                   localStorage.removeItem('playername'), localStorage.removeItem('playerid'), _this.$router.push({
                     name: "home"
-                  });
+                  }), _this.errado = false;
                 })["catch"](function (error) {
-                  console.log(error);
+                  _this.errado = true, console.log(error);
                 });
 
               case 2:
@@ -238,7 +242,13 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _vm._m(0)
+      _vm._m(0),
+      _vm._v(" "),
+      _vm.errado
+        ? _c("small", { staticClass: "text-danger" }, [
+            _vm._v("Nombre de usuario repetido")
+          ])
+        : _vm._e()
     ]
   )
 }

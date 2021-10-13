@@ -8,7 +8,7 @@
                     <thead class="bg-primary text-white">
                         <tr>
                             <th>Nombre</th>
-                            <th>AWP</th>
+                            <th>AWR</th>
                         </tr>
                     </thead>
 
@@ -46,6 +46,7 @@ export default {
                await this.axios.get('/api/players/ranking/show')
                 .then(response=>{
                     this.scores=response.data
+                    //this.scores = Array.from(this.scores)
                     //this.scores = this.scores.sort((a, b)=>b.awr - a.awr)
                     })
                     .catch(error=>{

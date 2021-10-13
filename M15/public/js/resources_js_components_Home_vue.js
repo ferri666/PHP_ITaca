@@ -68,9 +68,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("ESTA ES LA HOME")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_c("u", [_vm._v("COMO FUNCIONA")])]),
+      _vm._v(" "),
+      _c("ol", [
+        _c("li", [_vm._v("Acceder como usuario")]),
+        _vm._v(" "),
+        _c("li", [_vm._v("Registrar Jugador")]),
+        _vm._v(" "),
+        _c("li", [_vm._v("¡JUGAR!")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

@@ -3,10 +3,10 @@
     <div class="row">
         <h1>Lo sentimos <span v-if="loser.loser.name" class="text-danger">{{loser.loser.name}}</span><span v-else class="text-danger">Anónimo</span>.</h1>
 
-        <h2>Tu record en {{loser.loser.total_games}} partidas es de {{loser.awl}} %...</h2>
+        <h2>Tu record en {{loser.loser.total_games}} partidas es de {{(loser.awl).toFixed(2)}} %...</h2>
 
          <div class="container">
-        <img src="/img/loser.gif" style="margin-left:6%" width=40%></div>
+        <img src="/img/loser2.gif" style="margin-left:6%" width=40%></div>
     </div>
     </div>
 </template>

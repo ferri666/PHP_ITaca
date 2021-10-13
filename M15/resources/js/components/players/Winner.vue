@@ -3,7 +3,7 @@
     <div class="row">
         <h1>Felicidades <span v-if="winner.winner.name" class="text-success">{{winner.winner.name}}</span><span v-else class="text-success">Anónimo </span>!!!</h1>
 
-        <h2>Tu record en {{winner.winner.total_games}} partidas es del {{winner.awp}} %!</h2>
+        <h2>Tu record en {{winner.winner.total_games}} partidas es del {{(winner.awp).toFixed(2)}} %!</h2>
         <div class="container">
         <img src="/img/win.gif" style="margin-left:6%" width=20%></div>
         
