@@ -47,15 +47,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ranking",
   data: function data() {
     return {
-      scores: {}
+      scores: {},
+      dif: []
     };
   },
   mounted: function mounted() {
-    this.mostrarScores();
+    this.mostrarScores(); // this.sortedScores()
   },
   methods: {
     mostrarScores: function mostrarScores() {
@@ -71,6 +74,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 };
                 _context.next = 3;
                 return _this.axios.get('/api/players/ranking/show').then(function (response) {
+                  console.log(response.data);
                   _this.scores = response.data; //this.scores = Array.from(this.scores)
                   //this.scores = this.scores.sort((a, b)=>b.awr - a.awr)
                 })["catch"](function (error) {
@@ -86,6 +90,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     }
+  },
+  computed: {
+    sortedScores: function sortedScores() {}
   }
 });
 
@@ -184,7 +191,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.scores, function(score) {
+              _vm._l(_vm.scores, function(score, index) {
                 return _c("tr", { key: score.id }, [
                   _c("td", [
                     score.name
@@ -192,7 +199,13 @@ var render = function() {
                       : _c("span", [_vm._v("Anónimo")])
                   ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(score.awr.toFixed(2)) + "%")])
+                  _c("td", [_vm._v(_vm._s(score.awr.toFixed(2)) + "%")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    index + 1 < 4
+                      ? _c("b", [_vm._v(_vm._s(index + 1))])
+                      : _c("span", [_vm._v(_vm._s(index + 1))])
+                  ])
                 ])
               }),
               0
@@ -212,7 +225,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", [_vm._v("AWR")])
+        _c("th", [_vm._v("AWR")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Posición")])
       ])
     ])
   }

@@ -135,9 +135,8 @@ class PlayerController extends Controller
             ]);
             }
         }
-
         $ordenado = $scores->sortByDesc('awr');
-        return response()->json($ordenado);
+        return response()->json($ordenado->values()->all());
     }
 
     public function loser()

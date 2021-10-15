@@ -9,13 +9,15 @@
                         <tr>
                             <th>Nombre</th>
                             <th>AWR</th>
+                            <th>Posición</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr v-for="score in scores" :key="score.id">
+                        <tr v-for="(score, index) in scores" :key="score.id">
                             <td><span v-if="score.name">{{score.name}}</span><span v-else>Anónimo</span></td>
                             <td>{{(score.awr).toFixed(2)}}%</td>
+                             <td><b v-if="index+1<4">{{index+1}}</b><span v-else>{{index+1}}</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -32,11 +34,13 @@ export default {
 
     data() {
         return{
-            scores:{}
+            scores:{},
+            dif:[]
         }
     },
     mounted(){
         this.mostrarScores()
+       // this.sortedScores()
     },
     methods:{
         async mostrarScores() {
@@ -44,7 +48,8 @@ export default {
                Authorization: "Bearer " +localStorage.getItem("token")
            };
                await this.axios.get('/api/players/ranking/show')
-                .then(response=>{
+                .then(response=>{ 
+                    console.log(response.data)
                     this.scores=response.data
                     //this.scores = Array.from(this.scores)
                     //this.scores = this.scores.sort((a, b)=>b.awr - a.awr)
@@ -55,6 +60,11 @@ export default {
                     })
         }
         
+    },
+    computed: {
+        sortedScores(){
+        
+        }
     }
 } 
 </script>
